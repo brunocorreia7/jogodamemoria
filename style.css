@@ -4,23 +4,26 @@ body {
     background-color: #3636f5;
     margin: 0;
     padding: 20px;
+    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 h1 {
     color: #fdfbfb;
+    font-size: 1.5em; /* Ajusta o tamanho do título em telas menores */
 }
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(4, 100px); /* 4 colunas de cartas */
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta o número de colunas automaticamente */
+    gap: 10px; /* Reduz o espaçamento em telas menores */
     justify-content: center;
-    margin-top: 20px;
+    padding: 10px; /* Adiciona espaçamento ao redor do grid */
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 100%; /* Ajusta o tamanho da carta para preencher a coluna */
+    height: auto; /* Mantém a proporção */
+    aspect-ratio: 1; /* Garante que a carta seja quadrada */
     background-color: #333;
     color: white;
     display: flex;
@@ -31,6 +34,9 @@ h1 {
     cursor: pointer;
     position: relative;
     perspective: 1000px; /* Adiciona profundidade para o efeito de rotação */
+    touch-action: manipulation; /* Otimiza a experiência de toque */
+    min-width: 80px; /* Garante um tamanho mínimo */
+    min-height: 80px;
 }
 
 .card img {
@@ -74,11 +80,12 @@ h1 {
     transform: rotateY(180deg);
 }
 
-#restartBut {
+#restartBut,
+#play-again-btn {
     display: block;
     margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 15px;
+    font-size: 1em;
     color: #fff;
     background-color: #007bff;
     border: none;
@@ -87,12 +94,14 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-#restartBut:hover {
+#restartBut:hover,
+#play-again-btn:hover {
     background-color: #0056b3;
 }
 
-#moves-counter {
-    font-size: 15px;
+#moves-counter,
+#timer {
+    font-size: 1em;
     color: #333;
     background-color: #f9f9f9;
     padding: 10px;
@@ -133,7 +142,7 @@ h1 {
 }
 
 #timer {
-    font-size: 15px;
+    font-size: 1em;
     color: #fffdfd;
     border-radius: 5px;
     border: 2px solid #ccc;
