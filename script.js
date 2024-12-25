@@ -5,7 +5,7 @@ const winMessage = document.querySelector("#win-message");
 const playAgainBtn = document.querySelector("#play-again-btn");
 const timerDisplay = document.querySelector("#timer");
 
-// Imagens ou símbolos para o jogo (corrigido o caminho das imagens)
+
 const cards = [
   "cachorro.webp", "cachorro.webp",
   "galo.jpeg", "galo.jpeg",
@@ -46,10 +46,10 @@ function createCards() {
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
-let moves = 0; // Contador de movimentos
-let matchedPairs = 0; // Contador de pares encontrados
-let startTime = null; // Hora de início do jogo
-let timerInterval = null; // Intervalo para o cronômetro
+let moves = 0; 
+let matchedPairs = 0; 
+let startTime = null; 
+let timerInterval = null; 
 
 function updateMoves() {
   moves++;
@@ -113,7 +113,7 @@ function resetTurn() {
   lockBoard = false;
 }
 
-// Função para reiniciar o jogo
+
 function restartGame() {
   // Limpa o tabuleiro
   gameContainer.innerHTML = "";
