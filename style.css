@@ -141,3 +141,47 @@ h1 {
     margin: 8px auto;
     text-align: center;
 }
+
+/* Media query para telas pequenas (dispositivos móveis) */
+@media screen and (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, 100px); /* 2 colunas para telas pequenas */
+    }
+
+    .card {
+        width: 80px; /* Reduz o tamanho das cartas */
+        height: 80px;
+        font-size: 20px; /* Ajusta o tamanho da fonte */
+    }
+
+    #restartBut {
+        padding: 8px 16px;
+        font-size: 14px; /* Reduz o tamanho do botão */
+    }
+
+    #moves-counter {
+        font-size: 14px; /* Ajusta o tamanho da fonte no contador */
+    }
+
+    #timer {
+        font-size: 14px; /* Ajusta o tamanho da fonte no timer */
+    }
+}
+
+/* Media query para telas maiores, como tablets */
+@media screen and (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: repeat(3, 100px); /* 3 colunas para tablets */
+    }
+
+    .card {
+        width: 90px; /* Ajusta o tamanho das cartas */
+        height: 90px;
+        font-size: 22px; /* Ajusta o tamanho da fonte */
+    }
+
+    #restartBut {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+}
