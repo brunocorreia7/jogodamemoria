@@ -12,15 +12,15 @@ h1 {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(4, 100px); /* 4 colunas de cartas */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em todas as telas */
     gap: 15px;
     justify-content: center;
     margin-top: 20px;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Tornando as cartas quadradas */
+    height: 100px; /* Tornando as cartas quadradas */
     background-color: #333;
     color: white;
     display: flex;
@@ -179,7 +179,7 @@ h1 {
 /* Responsivo para telas médias (tablets) */
 @media (max-width: 1024px) {
     .game-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets e acima */
         gap: 12px;
     }
 
