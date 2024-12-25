@@ -4,26 +4,23 @@ body {
     background-color: #3636f5;
     margin: 0;
     padding: 20px;
-    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 h1 {
     color: #fdfbfb;
-    font-size: 1.5em; /* Ajusta o tamanho do título em telas menores */
 }
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta o número de colunas automaticamente */
-    gap: 10px; /* Reduz o espaçamento em telas menores */
+    grid-template-columns: repeat(4, 100px); /* 4 colunas de cartas */
+    gap: 15px;
     justify-content: center;
-    padding: 10px; /* Adiciona espaçamento ao redor do grid */
+    margin-top: 20px;
 }
 
 .card {
-    width: 100%; /* Ajusta o tamanho da carta para preencher a coluna */
-    height: auto; /* Mantém a proporção */
-    aspect-ratio: 1; /* Garante que a carta seja quadrada */
+    width: 100px;
+    height: 100px;
     background-color: #333;
     color: white;
     display: flex;
@@ -34,9 +31,6 @@ h1 {
     cursor: pointer;
     position: relative;
     perspective: 1000px; /* Adiciona profundidade para o efeito de rotação */
-    touch-action: manipulation; /* Otimiza a experiência de toque */
-    min-width: 80px; /* Garante um tamanho mínimo */
-    min-height: 80px;
 }
 
 .card img {
@@ -80,12 +74,11 @@ h1 {
     transform: rotateY(180deg);
 }
 
-#restartBut,
-#play-again-btn {
+#restartBut {
     display: block;
     margin: 20px auto;
-    padding: 10px 15px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 16px;
     color: #fff;
     background-color: #007bff;
     border: none;
@@ -94,14 +87,12 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-#restartBut:hover,
-#play-again-btn:hover {
+#restartBut:hover {
     background-color: #0056b3;
 }
 
-#moves-counter,
-#timer {
-    font-size: 1em;
+#moves-counter {
+    font-size: 15px;
     color: #333;
     background-color: #f9f9f9;
     padding: 10px;
@@ -142,11 +133,79 @@ h1 {
 }
 
 #timer {
-    font-size: 1em;
+    font-size: 15px;
     color: #fffdfd;
     border-radius: 5px;
     border: 2px solid #ccc;
     width: fit-content;
     margin: 8px auto;
     text-align: center;
+}
+
+/* Responsivo para telas pequenas (celulares) */
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+        gap: 10px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+    }
+
+    #restartBut {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #moves-counter {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #win-message {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #timer {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Responsivo para telas médias (tablets) */
+@media (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+        gap: 12px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 20px;
+    }
+
+    #restartBut {
+        padding: 9px 18px;
+        font-size: 15px;
+    }
+
+    #moves-counter {
+        font-size: 15px;
+        padding: 9px;
+    }
+
+    #win-message {
+        font-size: 22px;
+        padding: 18px;
+    }
+
+    #timer {
+        font-size: 15px;
+        padding: 9px;
+    }
 }
