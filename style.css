@@ -13,7 +13,7 @@ h1 {
 .game-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas para todas as telas */
-    gap: 10px; /* Menor gap para melhorar o aproveitamento do espaço */
+    gap: 10px; 
     justify-content: center;
     margin-top: 20px;
 }
@@ -30,7 +30,7 @@ h1 {
     font-size: 24px;
     cursor: pointer;
     position: relative;
-    perspective: 1000px; /* Adiciona profundidade para o efeito de rotação */
+    perspective: 1000px; 
 }
 
 .card img {
@@ -142,7 +142,7 @@ h1 {
     text-align: center;
 }
 
-/* Responsivo para telas pequenas (celulares) */
+/*  para telas pequenas (celulares) */
 @media (max-width: 600px) {
     .game-container {
         grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas pequenas */
@@ -176,10 +176,10 @@ h1 {
     }
 }
 
-/* Responsivo para telas médias (tablets) */
+/*  para telas médias (tablets) */
 @media (max-width: 1024px) {
     .game-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 12px;
     }
 
