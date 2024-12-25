@@ -4,39 +4,33 @@ body {
     background-color: #3636f5;
     margin: 0;
     padding: 20px;
-    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 h1 {
     color: #fdfbfb;
-    font-size: 1.2em; /* Tamanho de fonte menor para telas pequenas */
 }
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Cartas menores */
-    gap: 8px; /* Reduz o espaçamento */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para todas as telas */
+    gap: 10px; /* Menor gap para melhorar o aproveitamento do espaço */
     justify-content: center;
-    padding: 10px; /* Adiciona espaçamento ao redor do grid */
+    margin-top: 20px;
 }
 
 .card {
-    width: 100%; /* Ajusta o tamanho da carta para preencher a coluna */
-    height: auto; /* Mantém a proporção */
-    aspect-ratio: 1; /* Garante que a carta seja quadrada */
+    width: 100px; /* Tornando as cartas quadradas */
+    height: 100px; /* Tornando as cartas quadradas */
     background-color: #333;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-size: 20px; /* Tamanho da fonte menor para caber bem nas telas pequenas */
+    font-size: 24px;
     cursor: pointer;
     position: relative;
     perspective: 1000px; /* Adiciona profundidade para o efeito de rotação */
-    touch-action: manipulation; /* Otimiza a experiência de toque */
-    min-width: 70px; /* Garante um tamanho mínimo */
-    min-height: 70px;
 }
 
 .card img {
@@ -80,12 +74,11 @@ h1 {
     transform: rotateY(180deg);
 }
 
-#restartBut,
-#play-again-btn {
+#restartBut {
     display: block;
-    margin: 15px auto; /* Reduz a margem */
-    padding: 8px 12px;
-    font-size: 0.9em; /* Fonte um pouco menor */
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
     color: #fff;
     background-color: #007bff;
     border: none;
@@ -94,17 +87,15 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-#restartBut:hover,
-#play-again-btn:hover {
+#restartBut:hover {
     background-color: #0056b3;
 }
 
-#moves-counter,
-#timer {
-    font-size: 0.9em; /* Tamanho da fonte menor para melhor ajuste */
+#moves-counter {
+    font-size: 15px;
     color: #333;
     background-color: #f9f9f9;
-    padding: 8px;
+    padding: 10px;
     border-radius: 8px;
     border: 2px solid #ccc;
     width: fit-content;
@@ -114,7 +105,7 @@ h1 {
 }
 
 #win-message {
-    font-size: 18px; /* Tamanho da fonte menor */
+    font-size: 24px;
     color: #4caf50;
     text-align: center;
     margin-top: 20px;
@@ -127,8 +118,8 @@ h1 {
 
 #win-message button {
     margin-top: 10px;
-    padding: 8px 15px;
-    font-size: 14px; /* Fonte menor */
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
     background-color: #4caf50;
     color: white;
@@ -142,11 +133,79 @@ h1 {
 }
 
 #timer {
-    font-size: 0.9em; /* Ajusta o tamanho da fonte */
+    font-size: 15px;
     color: #fffdfd;
     border-radius: 5px;
     border: 2px solid #ccc;
     width: fit-content;
     margin: 8px auto;
     text-align: center;
+}
+
+/* Responsivo para telas pequenas (celulares) */
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas pequenas */
+        gap: 5px; /* Menor gap para que as cartas fiquem mais próximas */
+    }
+
+    .card {
+        width: 90px; /* Ajuste para celular */
+        height: 90px;
+        font-size: 18px;
+    }
+
+    #restartBut {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #moves-counter {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #win-message {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #timer {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Responsivo para telas médias (tablets) */
+@media (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+        gap: 12px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 20px;
+    }
+
+    #restartBut {
+        padding: 9px 18px;
+        font-size: 15px;
+    }
+
+    #moves-counter {
+        font-size: 15px;
+        padding: 9px;
+    }
+
+    #win-message {
+        font-size: 22px;
+        padding: 18px;
+    }
+
+    #timer {
+        font-size: 15px;
+        padding: 9px;
+    }
 }
