@@ -12,15 +12,15 @@ h1 {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas em todas as telas */
+    grid-template-columns: repeat(4, 100px); /* 4 colunas de cartas */
     gap: 15px;
     justify-content: center;
     margin-top: 20px;
 }
 
 .card {
-    width: 100px; /* Tornando as cartas quadradas */
-    height: 100px; /* Tornando as cartas quadradas */
+    width: 100px;
+    height: 100px;
     background-color: #333;
     color: white;
     display: flex;
@@ -140,72 +140,4 @@ h1 {
     width: fit-content;
     margin: 8px auto;
     text-align: center;
-}
-
-/* Responsivo para telas pequenas (celulares) */
-@media (max-width: 600px) {
-    .game-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
-        gap: 10px;
-    }
-
-    .card {
-        width: 80px;
-        height: 80px;
-        font-size: 18px;
-    }
-
-    #restartBut {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    #moves-counter {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #win-message {
-        font-size: 20px;
-        padding: 15px;
-    }
-
-    #timer {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
-
-/* Responsivo para telas médias (tablets) */
-@media (max-width: 1024px) {
-    .game-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets e acima */
-        gap: 12px;
-    }
-
-    .card {
-        width: 90px;
-        height: 90px;
-        font-size: 20px;
-    }
-
-    #restartBut {
-        padding: 9px 18px;
-        font-size: 15px;
-    }
-
-    #moves-counter {
-        font-size: 15px;
-        padding: 9px;
-    }
-
-    #win-message {
-        font-size: 22px;
-        padding: 18px;
-    }
-
-    #timer {
-        font-size: 15px;
-        padding: 9px;
-    }
 }
