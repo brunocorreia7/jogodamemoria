@@ -150,9 +150,9 @@ h1 {
     }
 
     .card {
-        width: 90px; /* Ajuste para celular */
-        height: 90px;
-        font-size: 18px;
+        width: 80px; /* Menor tamanho das cartas */
+        height: 80px; /* Menor tamanho das cartas */
+        font-size: 16px; /* Font menor para caber nas cartas */
     }
 
     #restartBut {
