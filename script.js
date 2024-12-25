@@ -7,13 +7,14 @@ const timerDisplay = document.querySelector("#timer");
 
 // Imagens ou símbolos para o jogo (corrigido o caminho das imagens)
 const cards = [
-  "fotoanimais/cachorro.webp", "fotoanimais/cachorro.webp",
-  "fotoanimais/galo.jpeg", "fotoanimais/galo.jpeg",
-  "fotoanimais/gato.webp", "fotoanimais/gato.webp",
-  "fotoanimais/macaco.jpeg", "fotoanimais/macaco.jpeg",
-  "fotoanimais/passarinho.jpeg", "fotoanimais/passarinho.jpeg",
-  "fotoanimais/pintinho.jpg", "fotoanimais/pintinho.jpg",
+  "cachorro.webp", "cachorro.webp",
+  "galo.jpeg", "galo.jpeg",
+  "gato.webp", "gato.webp",
+  "macaco.jpeg", "macaco.jpeg",
+  "passarinho.jpeg", "passarinho.jpeg",
+  "pintinho.jpg", "pintinho.jpg",
 ];
+
 
 // Embaralha as cartas
 function shuffle(array) {
